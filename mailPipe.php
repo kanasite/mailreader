@@ -40,14 +40,14 @@ $save_directory = __DIR__; // stick them in the current directory
 // Configure your MySQL database connection here
 // Other PDO connections will probably work too
 $db_host = 'localhost';
-$db_un = 'db_un';
-$db_pass = 'db_pass';
-$db_name = 'db_name';
+$db_un = 'mysql';
+$db_pass = '123456';
+$db_name = 'mailreader';
 $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8",$db_un,$db_pass);
 
 
 // Who can send files to through this script?
-$allowed_senders = Array('myemail@example.com', 'whatever@example.com');
+$allowed_senders = Array('shauleong@gmail.com', 'myemail@example.com', 'whatever@example.com');
 
 $mr = new mailReader($save_directory,$allowed_senders,$pdo);
 $mr->save_msg_to_db = TRUE;

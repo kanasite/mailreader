@@ -1,6 +1,6 @@
 <?php
 
-require_once('mimeDecode.php');
+require_once('Mail/mimeDecode.php');
 
 /*
  * @class mailReader.php
@@ -17,9 +17,9 @@ require_once('mimeDecode.php');
  */
 class mailReader {
     var $saved_files = Array();
-    var $send_email = FALSE; // Send confirmation e-mail back to sender?
-    var $save_msg_to_db = FALSE; // Save e-mail message and file list to DB?
-    var $save_directory; // A safe place for files. Malicious users could upload a php or executable file, so keep this out of your web root
+    var $send_email = TRUE; // Send confirmation e-mail back to sender?
+    var $save_msg_to_db = TRUE; // Save e-mail message and file list to DB?
+    var $save_directory = '/var/mailreader/'; // A safe place for files. Malicious users could upload a php or executable file, so keep this out of your web root
     var $allowed_senders = Array(); // Allowed senders is just the email part of the sender (no name part)
     var $allowed_mime_types = Array(
         'audio/wave',
@@ -29,6 +29,7 @@ class mailReader {
         'image/jpeg',
         'image/png',
         'image/gif',
+        'text/csv',
     );
     var $debug = FALSE;
 
