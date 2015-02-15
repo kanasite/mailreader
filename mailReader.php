@@ -84,7 +84,8 @@ class mailReader {
 
         // Set the $this->subject
         $this->subject = $this->decoded->headers['subject'];
-
+        echo '<pre>';
+        print_r($this->decoded);exit;
         // Find the email body, and any attachments
         // $body_part->ctype_primary and $body_part->ctype_secondary make up the mime type eg. text/plain or text/html
         if(isset($this->decoded->parts) && is_array($this->decoded->parts)){
