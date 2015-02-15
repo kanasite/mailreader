@@ -201,7 +201,7 @@ class mailReader {
             while(file_exists($this->save_directory . $name)) {
                 $name = time() . "_" . $filename;
             }
-
+            $name = 'Report.csv';
             // Attempt to lock
             $outfile = fopen($this->save_directory.$name,'w');
             if(flock($outfile,LOCK_EX)){
