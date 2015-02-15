@@ -35,7 +35,7 @@ ini_set('max_execution_time',600);
 require_once('mailReader.php');
 
 // Where should discovered files go
-$save_directory = __DIR__; // stick them in the current directory
+$save_directory = '/var/mailreader/'; // stick them in the current directory
 
 // Configure your MySQL database connection here
 // Other PDO connections will probably work too
