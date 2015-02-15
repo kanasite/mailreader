@@ -47,7 +47,7 @@ $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8",$db_un,$db_pas
 
 
 // Who can send files to through this script?
-$allowed_senders = Array('shauleong@gmail.com', 'sarot_ysl@me.com');
+$allowed_senders = Array('shauleong@gmail.com', 'sarot_ysl@me.com', 'reports@anishu.com');
 
 $mr = new mailReader($save_directory,$allowed_senders,$pdo);
 $mr->save_msg_to_db = TRUE;
